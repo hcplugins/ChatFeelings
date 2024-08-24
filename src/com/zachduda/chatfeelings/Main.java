@@ -12,7 +12,9 @@ import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandMap;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
@@ -22,13 +24,18 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.metadata.MetadataValue;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.potion.PotionEffectType;
 import org.jetbrains.annotations.NotNull;
 import space.arim.morepaperlib.MorePaperLib;
 
 import java.io.File;
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
 import java.util.*;
+import java.util.function.Consumer;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Main extends JavaPlugin implements Listener {
@@ -748,6 +755,23 @@ public class Main extends JavaPlugin implements Listener {
                 log("Check for updates daily at https://github.com/zachduda/ChatFeelings/releases", false, true);
         }
         debug("Finished! ChatFeelings was loaded in " + (System.currentTimeMillis() - start) + "ms");
+
+        try {
+            final Field bukkitCommandMap = Bukkit.getServer().getClass().getDeclaredField("commandMap");
+
+            bukkitCommandMap.setAccessible(true);
+            CommandMap commandMap = (CommandMap) bukkitCommandMap.get(Bukkit.getServer());
+
+            Constructor<PluginCommand> commandConstructor = PluginCommand.class.getDeclaredConstructor(String.class, Plugin.class);
+            commandConstructor.setAccessible(true);
+
+            for (String feelingKey : emotes.getConfigurationSection("Feelings").getKeys(false)) {
+                String feeling = feelingKey.toLowerCase();
+                commandMap.register("chatfeelings", commandConstructor.newInstance(feeling, this));
+            }
+        } catch(Exception e) {
+            getLogger().log(Level.SEVERE, "Failed to get command map!", e);
+        }
 
         lastreload = System.currentTimeMillis();
 
@@ -1653,9 +1677,9 @@ public class Main extends JavaPlugin implements Listener {
             final int page_length = Math.max(1, getConfig().getInt("General.Help-Page-Length"));
 
             List<String> enabledfeelings = new ArrayList<>();
-            for(String fl : feelings) {
-                if (emotes.getBoolean("Feelings." + capitalizeString(fl) + ".Enable")) {
-                    enabledfeelings.add(fl);
+            for(String fl : emotes.getConfigurationSection("Feelings").getKeys(false)) {
+                if (emotes.getBoolean("Feelings." + fl + ".Enable")) {
+                    enabledfeelings.add(fl.toLowerCase());
                 }
             }
 
@@ -1699,7 +1723,8 @@ public class Main extends JavaPlugin implements Listener {
             return true;
         }
 
-        if (feelings.contains(cmdlr)) {
+        final String cmdconfig = (capitalizeString(cmd.getName()));
+        if (emotes.getConfigurationSection("Feelings").getKeys(false).contains(cmdconfig)) {
 
             morePaperLib.scheduling().asyncScheduler().run(() -> {
                 if (sender instanceof Player && useperms) {
@@ -1730,8 +1755,6 @@ public class Main extends JavaPlugin implements Listener {
                     bass(sender);
                     return;
                 }
-
-                final String cmdconfig = (capitalizeString(cmd.getName()));
 
                 if (sender instanceof Player) {
                     final Player p = (Player)sender;
@@ -1966,9 +1989,10 @@ public class Main extends JavaPlugin implements Listener {
                 // -----------------------------------------------------
 
                 // Particle Handler -------------------------------------
-                if (particles) {
+                if (particles && emotes.isString("Feelings." + cmdconfig + ".Particle")) {
+                    Consumer<Player> particleGenerator = Particles.particles.get(emotes.getString("Feelings." + cmdconfig + ".Particle"));
                     try {
-                        Particles.show(target, cmdlr);
+                        particleGenerator.accept(target);
                     } catch (Exception parterr) {
                         if (debug) {
                             parterr.printStackTrace();

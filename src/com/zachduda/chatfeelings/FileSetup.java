@@ -461,6 +461,7 @@ public class FileSetup {
         setEmotes("Feelings.Hug.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Hug.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Hug.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Hug.Particle", "hug");
 
         setEmotesBoolean("Feelings.Bite.Enable", true);
         setEmotes("Feelings.Bite.Msgs.Sender", "&7You sink your teeth into &c&l%player%&r&7's skin.");
@@ -473,6 +474,7 @@ public class FileSetup {
         setEmotes("Feelings.Bite.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Bite.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Bite.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Bite.Particle", "bite");
 
         setEmotesBoolean("Feelings.Punch.Enable", true);
         setEmotes("Feelings.Punch.Msgs.Sender", "&7You strike &c&l%player% &r&7with a punch. Ouch!");
@@ -485,6 +487,7 @@ public class FileSetup {
         setEmotes("Feelings.Punch.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Punch.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Punch.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Punch.Particle", "punch");
 
         setEmotesBoolean("Feelings.Murder.Enable", true);
         setEmotes("Feelings.Murder.Msgs.Sender", "&7You murder &c&l%player% &r&7and have no regrets.");
@@ -496,6 +499,7 @@ public class FileSetup {
         setEmotes("Feelings.Murder.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Murder.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Murder.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Murder.Particle", "murder");
 
         setEmotesBoolean("Feelings.Boi.Enable", true);
         setEmotes("Feelings.Boi.Msgs.Sender", "&7You inhale at &e&l%player%&r&7... &6&lBOI");
@@ -507,6 +511,7 @@ public class FileSetup {
         setEmotes("Feelings.Boi.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Boi.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Boi.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Boi.Particle", "boi");
 
         setEmotesBoolean("Feelings.Dab.Enable", true);
         setEmotes("Feelings.Dab.Msgs.Sender", "&7You freshly dab on &a&l%player%&r&7... &7&oGot'em.");
@@ -518,6 +523,7 @@ public class FileSetup {
         setEmotes("Feelings.Dab.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Dab.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Dab.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Dab.Particle", "dab");
 
         setEmotesBoolean("Feelings.Cry.Enable", true);
         setEmotes("Feelings.Cry.Msgs.Sender", "&7You cry on &b&l%player%&r&7's shoulder.");
@@ -529,6 +535,7 @@ public class FileSetup {
         setEmotes("Feelings.Cry.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Cry.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Cry.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Cry.Particle", "cry");
 
         setEmotesBoolean("Feelings.Facepalm.Enable", true);
         setEmotes("Feelings.Facepalm.Msgs.Sender", "&7You facepalm at what &e&l%player% &r&7just said.");
@@ -540,6 +547,7 @@ public class FileSetup {
         setEmotes("Feelings.Facepalm.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Facepalm.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Facepalm.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Facepalm.Particle", "facepalm");
 
         // need pitch & volume values:
 
@@ -553,6 +561,7 @@ public class FileSetup {
         setEmotes("Feelings.Highfive.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Highfive.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Highfive.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Highfive.Particle", "highfive");
 
         setEmotesBoolean("Feelings.Kiss.Enable", true);
         setEmotes("Feelings.Kiss.Msgs.Sender", "&7You give &a&l%player% &r&7a kiss. &cAwww &4❤");
@@ -564,6 +573,7 @@ public class FileSetup {
         setEmotes("Feelings.Kiss.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Kiss.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Kiss.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Kiss.Particle", "hug");
 
         setEmotesBoolean("Feelings.Lick.Enable", true);
         setEmotes("Feelings.Lick.Msgs.Sender", "&7You lick &e&l%player% &7like ice-cream. &6Gross!");
@@ -575,6 +585,7 @@ public class FileSetup {
         setEmotes("Feelings.Lick.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Lick.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Lick.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Lick.Particle", "lick");
 
         setEmotesBoolean("Feelings.Shake.Enable", true);
         setEmotes("Feelings.Shake.Msgs.Sender", "&7You shake &c&l%player%&r&7's entire body.");
@@ -586,6 +597,7 @@ public class FileSetup {
         setEmotes("Feelings.Shake.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Shake.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Shake.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Shake.Particle", "slap");
 
         setEmotesBoolean("Feelings.Snuggle.Enable", true);
         setEmotes("Feelings.Snuggle.Msgs.Sender", "&7You snuggle &a&l%player% &r&7with love. &cAwww &4❤");
@@ -597,6 +609,7 @@ public class FileSetup {
         setEmotes("Feelings.Snuggle.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Snuggle.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Snuggle.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Snuggle.Particle", "hug");
 
         setEmotesBoolean("Feelings.Yell.Enable", true);
         setEmotes("Feelings.Yell.Msgs.Sender", "&7You yell at &c&l%player%&r&7 at the top of your lungs.");
@@ -608,6 +621,7 @@ public class FileSetup {
         setEmotes("Feelings.Yell.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Yell.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Yell.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Yell.Particle", "yell");
 
         setEmotesBoolean("Feelings.Poke.Enable", true);
         setEmotes("Feelings.Poke.Msgs.Sender", "&7You poked &e&l%player%&7. Maybe they're on vacation?");
@@ -619,6 +633,7 @@ public class FileSetup {
         setEmotes("Feelings.Poke.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Poke.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Poke.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Poke.Particle", "poke");
 
         setEmotesBoolean("Feelings.Slap.Enable", true);
         setEmotes("Feelings.Slap.Msgs.Sender", "&7You slap &c&l%player% &r&7with some spaghetti.");
@@ -630,6 +645,7 @@ public class FileSetup {
         setEmotes("Feelings.Slap.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Slap.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Slap.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Slap.Particle", "punch");
 
         setEmotesBoolean("Feelings.Stab.Enable", true);
         setEmotes("Feelings.Stab.Msgs.Sender", "&7You stab &c&l%player% &r&7with a knife. Got Bandaids?");
@@ -641,6 +657,7 @@ public class FileSetup {
         setEmotes("Feelings.Stab.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Stab.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Stab.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Stab.Particle", "murder");
 
         setEmotesBoolean("Feelings.Pat.Enable", true);
         setEmotes("Feelings.Pat.Msgs.Sender", "&7You gently pat &a&l%player%&r&7's head for being good.");
@@ -652,6 +669,7 @@ public class FileSetup {
         setEmotes("Feelings.Pat.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Pat.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Pat.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Pat.Particle", "hug");
 
         setEmotesBoolean("Feelings.Scorn.Enable", true);
         setEmotes("Feelings.Scorn.Msgs.Sender", "&7You scorn &c&l%player% &r&7for what they've done.");
@@ -717,6 +735,7 @@ public class FileSetup {
         setEmotes("Feelings.Wave.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Wave.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Wave.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Wave.Particle", "wave");
 
         setEmotesBoolean("Feelings.Welcomeback.Enable", true);
         setEmotes("Feelings.Welcomeback.Msgs.Sender", "&7You told &a&l%player%&r &7welcome back!");
@@ -728,6 +747,7 @@ public class FileSetup {
         setEmotes("Feelings.Welcomeback.Sounds.Sound2.Name", "None");
         setEmotesDouble("Feelings.Welcomeback.Sounds.Sound2.Volume", 0.0);
         setEmotesDouble("Feelings.Welcomeback.Sounds.Sound2.Pitch", 0.0);
+        setEmotes("Feelings.Welcomeback.Particle", "wb");
 
         setEmotesVersion(6);
         reloadFiles();

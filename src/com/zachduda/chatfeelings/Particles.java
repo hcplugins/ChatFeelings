@@ -4,6 +4,11 @@ import com.zachduda.chatfeelings.other.Supports;
 import org.bukkit.*;
 import org.bukkit.entity.Player;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Consumer;
+
 @SuppressWarnings("StatementWithEmptyBody")
 public class Particles {
 
@@ -79,6 +84,28 @@ public class Particles {
                 }
             }
         }
+
+    public static final Map<String, Consumer<Player>> particles;
+    // in case the java version gets bumped replace this initialization with Map.ofEntries
+    static {
+        Map<String, Consumer<Player>> tmp = new HashMap<>();
+        tmp.put("hug", Particles::hugParticle);
+        tmp.put("bite", Particles::biteParticle);
+        tmp.put("wave", Particles::waveParticle);
+        tmp.put("slap", Particles::slapParticle);
+        tmp.put("punch", Particles::punchParticle);
+        tmp.put("murder", Particles::murderParticle);
+        tmp.put("boi", Particles::boiParticle);
+        tmp.put("dab", Particles::dabParticle);
+        tmp.put("cry", Particles::cryParticle);
+        tmp.put("facepalm", Particles::facepalmParticle);
+        tmp.put("highfive", Particles::highfiveParticle);
+        tmp.put("poke", Particles::pokeParticle);
+        tmp.put("lick", Particles::lickParticle);
+        tmp.put("yell", Particles::yellParticle);
+        tmp.put("wb", Particles::wbParticle);
+        particles = Collections.unmodifiableMap(tmp);
+    }
 
 	private static void hugParticle(Player p) {
         World world = p.getLocation().getWorld();
