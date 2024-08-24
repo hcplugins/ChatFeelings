@@ -1992,14 +1992,16 @@ public class Main extends JavaPlugin implements Listener {
                 // Particle Handler -------------------------------------
                 if (particles && target.getGameMode() != GameMode.SPECTATOR && emotes.isString("Feelings." + cmdconfig + ".Particle")) {
                     Consumer<Player> particleGenerator = Particles.particles.get(emotes.getString("Feelings." + cmdconfig + ".Particle"));
-                    try {
-                        particleGenerator.accept(target);
-                    } catch (Exception parterr) {
-                        if (debug) {
-                            parterr.printStackTrace();
+                    if(particleGenerator != null) {
+                        try {
+                            particleGenerator.accept(target);
+                        } catch (Exception parterr) {
+                            if (debug) {
+                                parterr.printStackTrace();
+                            }
+                            particles = false;
+                            log("Couldn't display '" + cmd.getName().toUpperCase() + "' particles to " + target.getName() + ". Make sure you use 1.12 or higher.", false, true);
                         }
-                        particles = false;
-                        log("Couldn't display '" + cmd.getName().toUpperCase() + "' particles to " + target.getName() + ". Make sure you use 1.12 or higher.", false, true);
                     }
                 }
                 // -----------------------------------------------------
