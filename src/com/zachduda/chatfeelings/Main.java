@@ -10,6 +10,7 @@ import org.bstats.bukkit.Metrics;
 import org.bstats.charts.SimpleBarChart;
 import org.bstats.charts.SimplePie;
 import org.bukkit.Bukkit;
+import org.bukkit.GameMode;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandMap;
@@ -1989,7 +1990,7 @@ public class Main extends JavaPlugin implements Listener {
                 // -----------------------------------------------------
 
                 // Particle Handler -------------------------------------
-                if (particles && emotes.isString("Feelings." + cmdconfig + ".Particle")) {
+                if (particles && target.getGameMode() != GameMode.SPECTATOR && emotes.isString("Feelings." + cmdconfig + ".Particle")) {
                     Consumer<Player> particleGenerator = Particles.particles.get(emotes.getString("Feelings." + cmdconfig + ".Particle"));
                     try {
                         particleGenerator.accept(target);
